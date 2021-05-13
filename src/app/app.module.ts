@@ -7,11 +7,14 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CartService } from './shopping-cart/cart.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService,
+  providers: [ProductService, CartService,
               {provide: APP_BASE_HREF, useValue : '/'}],
   bootstrap: [AppComponent]
 })
