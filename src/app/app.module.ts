@@ -9,12 +9,17 @@ import { ProductService } from './product.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CartService } from './shopping-cart/cart.service';
+import { HeaderComponent } from './header/header.component';
+import { RouterModule, Routes } from '@angular/router'
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ProductCart } from 'src/app/shopping-cart/cart';
+import { CartService } from './cart.service'
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  productCart: ProductCart[];
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+  this.getCart();
   }
+
+  public getCart() : void {
+   this.cartService.getCart().subscribe(
+      (response: ProductCart[]) => {
+        this.productCart = response;
+        },
+        (error: HttpErrorResponse) => {
+        alert(error.message);
+        }
+        );
+    }
 
 }

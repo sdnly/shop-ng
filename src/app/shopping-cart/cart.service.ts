@@ -18,7 +18,7 @@ export class CartService {
    return this.http.get<ProductCart[]>(this.shoppingCartUrl)
    }
 
-   public addToCart(product: Product): Observable<ProductCart> {
-   return this.http.post<ProductCart>(this.shoppingCartUrl, product)
-   }
+//    public addToCart(product: Product): Observable<ProductCart> {
+//    return this.http.post<ProductCart>(this.shoppingCartUrl, product)
+//    }
 }
